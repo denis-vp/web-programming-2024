@@ -1,0 +1,51 @@
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+/* Main */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+/* Accordion */
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    border: 1px solid #000;
+}
+
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #eee;
+    cursor: pointer;
+    width: 100%;
+}
+
+.active, .accordion-header:hover {
+    background-color: #ccc;
+}
+
+.accordion-content {
+    display: none;
+    overflow: hidden;
+}
