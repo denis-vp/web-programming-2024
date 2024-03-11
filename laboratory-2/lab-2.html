@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows-like Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="desktop"></div>
+    <div id="taskbar">
+        <input type="checkbox" id="start-button"></input>
+        <label for="start-button"><img src="images/start-button.png" alt="Start Button"></label>
+        <ul id="start-menu">
+            <li>Windows Update</li>
+            <li class="side-menu">
+                Programs
+                <ul>
+                    <li>Internet Explorer</li>
+                    <li class="side-menu">
+                        Media
+                        <ul>
+                            <li>Video Player</li>
+                            <li>Music Player</li>
+                            <li>Image Viewer</li>
+                        </ul>
+                    </li>
+                    <li>Notepad</li>
+                </ul>
+            </li>
+            <li>Documents</li>
+            <li>Help</li>
+            <li>Log Off</li>
+            <li>Shutdown</li>
+        </ul>
+    </div>
+</body>
+
+</html>

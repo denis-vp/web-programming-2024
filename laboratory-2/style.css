@@ -1,0 +1,133 @@
+/* ---------------- General Settings ---------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    
+    list-style-type: none;
+}
+
+/* ---------------- Desktop ---------------- */
+
+#desktop {
+    padding: 0;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 6vh; /* the height of the taskbar */
+
+    background-image: url('images/windows-classic-background.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+}
+
+/* ---------------- Taskbar ---------------- */
+
+#taskbar {
+    position: absolute;
+    bottom: 0;
+
+    height: 6vh;
+    width: 100%;
+
+    background-color: rgb(20, 20, 20);
+
+    display: flex;
+    align-items: center;
+}
+
+/* ---------------- Start button ---------------- */
+
+/* hide the checkbox behind the windows start picture */
+#start-button {
+    display: none;
+}
+
+#start-button ~ label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* align the checkbox and the windows start picture */
+#start-button,
+#start-button ~ label {
+    margin: 0;
+    margin-left: 10px;
+}
+
+/* give the checkbox and the windows start picture the same size */
+#start-button,
+#start-button ~ label,
+#start-button ~ label img {
+    height: 80%;
+}
+
+/* ---------------- Start Menu ---------------- */
+
+/* hide and show the start menu */
+input[type="checkbox"]:checked#start-button ~ #start-menu {
+    display: flex;
+}
+
+#start-menu {
+    position: absolute;
+    left: 0;
+    bottom: 6vh; /* the height of the taskbar */
+
+    height: 70vh;
+    width: 30vw;
+
+    display: none;
+}
+
+#start-menu,
+.side-menu ul {
+    flex-direction: column;
+
+    border: 1px solid rgb(20, 20, 20);
+}
+
+#start-menu li {
+    padding: 10px;
+
+    position: relative;
+    
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    white-space: nowrap;
+    border-top: 1px solid rgb(20, 20, 20);
+    background-color: rgb(60, 60, 60);
+}
+
+#start-menu li:first-child {
+    border-top: none;
+}
+
+/* ---------------- Side Menu ---------------- */
+
+/* hide and show the side menus */
+.side-menu:hover > ul {
+    display: block;
+}
+
+.side-menu ul {
+    position: absolute;
+    top: -1px; /* the height of the border */
+    left: 100%;
+
+    display: none;
+}
