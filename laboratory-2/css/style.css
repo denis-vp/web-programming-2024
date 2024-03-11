@@ -25,7 +25,7 @@ ul {
     right: 0;
     bottom: 6vh; /* the height of the taskbar */
 
-    background-image: url('images/windows-classic-background.jpg');
+    background-image: url('../images/windows-classic-background.jpg');
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: cover;
