@@ -113,7 +113,7 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
 }
 
 #start-menu li {
-    padding: 5%;
+    padding: 3%;
 
     position: relative;
 
@@ -125,6 +125,7 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
     white-space: nowrap;
     border-top: 1px solid rgb(20, 20, 20);
     background-color: #bfbfbf;
+    
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 
     /* display flex for text, images, etc. inside a li */
