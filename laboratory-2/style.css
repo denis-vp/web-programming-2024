@@ -3,6 +3,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "MS Sans Serif", sans-serif;
 }
 
 ul {
@@ -39,10 +40,12 @@ ul {
     height: 6vh;
     width: 100%;
 
-    background-color: rgb(20, 20, 20);
+    background-color: #bfbfbf;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 /* ---------------- Start button ---------------- */
@@ -67,9 +70,12 @@ ul {
 
 /* give the checkbox and the windows start picture the same size */
 #start-button,
-#start-button ~ label,
-#start-button ~ label img {
+#start-button ~ label {
     height: 80%;
+}
+
+#start-button ~ label img {
+    height: 100%;
 }
 
 /* ---------------- Start Menu ---------------- */
@@ -80,6 +86,8 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
 }
 
 #start-menu {
+    padding-left: 40px;
+
     position: absolute;
     left: 0;
     bottom: 6vh; /* the height of the taskbar */
@@ -87,14 +95,15 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
     height: 70vh;
     width: 30vw;
 
+    background-color: #00007b;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+
     display: none;
 }
 
 #start-menu,
 .side-menu ul {
     flex-direction: column;
-
-    border: 1px solid rgb(20, 20, 20);
 }
 
 #start-menu li {
@@ -105,12 +114,13 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
     flex: 1;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     white-space: nowrap;
     border-top: 1px solid rgb(20, 20, 20);
-    background-color: rgb(60, 60, 60);
+    background-color: #bfbfbf;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 }
 
 #start-menu li:first-child {
@@ -126,8 +136,24 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
 
 .side-menu ul {
     position: absolute;
-    top: -1px; /* the height of the border */
+    top: 0;
     left: 100%;
 
     display: none;
+}
+
+/* ---------------- Clock ---------------- */
+
+#clock {
+    margin-right: 10px;
+
+    height: 70%;
+    width: 5%;
+
+    background-color: #bfbfbf;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
