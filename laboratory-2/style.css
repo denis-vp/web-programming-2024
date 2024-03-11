@@ -43,6 +43,7 @@ ul {
     background-color: #bfbfbf;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 
+    /* display flex for start button and clock */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,43 +51,46 @@ ul {
 
 /* ---------------- Start button ---------------- */
 
-/* hide the checkbox behind the windows start picture */
 #start-button {
+    /* hide the checkbox behind the windows start picture */
     display: none;
 }
 
 #start-button ~ label {
+    /* display flex to center the checkbox and start button image */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* align the checkbox and the windows start picture */
 #start-button,
 #start-button ~ label {
+    /* align the checkbox and the windows start picture */
     margin: 0;
-    margin-left: 10px;
+    margin-left: 1%;
 }
 
-/* give the checkbox and the windows start picture the same size */
 #start-button,
 #start-button ~ label {
+    /* give the checkbox and the windows start picture the same size */
     height: 80%;
 }
 
 #start-button ~ label img {
+    /* make the image occupy the whole parent (start-button) */
     height: 100%;
 }
 
 /* ---------------- Start Menu ---------------- */
 
-/* hide and show the start menu */
 input[type="checkbox"]:checked#start-button ~ #start-menu {
+    /* show the start menu */
+    /* display flex for li inside of it */
     display: flex;
 }
 
 #start-menu {
-    padding-left: 40px;
+    padding-left: 5%;
 
     position: absolute;
     left: 0;
@@ -98,54 +102,68 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
     background-color: #00007b;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 
+    /* hide the start-menu initially */
     display: none;
 }
 
 #start-menu,
 .side-menu ul {
+    /* make items appear one below another */
     flex-direction: column;
 }
 
 #start-menu li {
-    padding: 10px;
+    padding: 5%;
 
     position: relative;
-    
-    flex: 1;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    
+    /* allow items to grow or shrink */
+    flex: 1;
 
     white-space: nowrap;
     border-top: 1px solid rgb(20, 20, 20);
     background-color: #bfbfbf;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+
+    /* display flex for text, images, etc. inside a li */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #start-menu li:first-child {
+    /* borders are set only on top to make sure there aren't any adjacent ones */
+    /* the first child doesn't have one because there isn't another one above it */
     border-top: none;
+}
+
+.menu-item-text::first-letter {
+    text-decoration: underline;
 }
 
 /* ---------------- Side Menu ---------------- */
 
-/* hide and show the side menus */
 .side-menu:hover > ul {
+    /* show the side menu */
     display: block;
 }
 
 .side-menu ul {
+    /* position the side menu to the right of the parent */
     position: absolute;
     top: 0;
     left: 100%;
 
+    /* hide the side menu */
     display: none;
 }
 
 /* ---------------- Clock ---------------- */
 
 #clock {
-    margin-right: 10px;
+    margin-right: 1%;
 
     height: 70%;
     width: 5%;
@@ -153,6 +171,7 @@ input[type="checkbox"]:checked#start-button ~ #start-menu {
     background-color: #bfbfbf;
     box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
 
+    /* display flex to center the time string */
     display: flex;
     align-items: center;
     justify-content: center;
