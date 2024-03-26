@@ -1,0 +1,20 @@
+/* ----------------------------- General Settings ----------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Amazon Ember", Arial, sans-serif;
+
+    background-color: #e4e6e6;
+}
+
+a {
+    text-decoration: none;
+    color: #657fad;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #c06c38;
+}
