@@ -39,3 +39,7 @@ a {
     color: black;
     border-radius: 50%;
 }
+
+.selected {
+    border: 2px solid blue;
+}

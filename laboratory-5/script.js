@@ -1,3 +1,6 @@
+// Extra assignment: make the anchors selectable (add a border to them)
+// selected anchors should persist through refreshes
+
 addEventListener("DOMContentLoaded", (event) => script(event));
 
 const buttonFactory = (text, onClick) => {
@@ -11,7 +14,7 @@ const anchorFactory = (text, href) => {
     const anchor = document.createElement("a");
     anchor.innerText = text;
     anchor.href = href;
-    anchor.target = "_blank";
+    anchor.target = "blank";
     return anchor;
 }
 
@@ -53,7 +56,11 @@ const changeLink = () => {
     }
 }
 
+let selectedIndexes = [];
+
 const script = (event) => {
+    selectedIndexes = JSON.parse(localStorage.getItem("selectedIndexes")) || [];
+
     let container = document.getElementById("container");
     updateBackground();
 
@@ -71,6 +78,26 @@ const script = (event) => {
 
     for (let i = 0; i < 10; i++) {
         const anchor = anchorFactory(i + 1, "https://beastinblack.com/");
+        if (selectedIndexes.includes(i)) {
+            anchor.classList.add("selected");
+        }
+
+        anchor.addEventListener("click", (event) => {
+            console.log(event.target.classList)
+            if (event.target.classList.contains("selected")) {
+                event.target.classList.remove("selected");
+            } else {
+                event.target.classList.add("selected");
+            }
+
+            if (selectedIndexes.includes(i)) {
+                selectedIndexes.splice(selectedIndexes.indexOf(i), 1);
+            } else {
+                selectedIndexes = [...selectedIndexes, i];
+            }
+            
+            localStorage.setItem("selectedIndexes", JSON.stringify(selectedIndexes));
+        })
         anchorContainer.appendChild(anchor);
     }
 }

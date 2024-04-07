@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#desktop-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.desktop {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    padding: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    background-size: cover;
+}
+
+.icon {
+    width: 70px;
+    height: 100px;
+
+    padding-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+}
+
+.icon img {
+    height: 60%;
+}
+
+.icon p {
+    font-weight: bold;
+    text-overflow: ellipsis;
+}
