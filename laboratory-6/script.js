@@ -1,7 +1,7 @@
 addEventListener("DOMContentLoaded", (event) => script(event));
 
 // Start at -1 to make 0 be the first one to appear on page load
-let currentDesktop = -1;
+let currentDesktop = 0;
 let isAnimating = false;
 const cycleDesktops = () => {
     if (isAnimating) return; // If an animation is running, don't start a new one
@@ -13,15 +13,13 @@ const cycleDesktops = () => {
     if (currentDesktop === 4) currentDesktop = 0;
 
     // Slide out the previous desktop to the bottom
-    $(`#desktop-${prevDesktop}`).animate({ top: '100%' }, 500, function () {
-        $(this).hide(); // Hide it after the animation
-        $(this).css('top', '0'); // Reset the top position for the next time it's shown
+    $(`#desktop-${prevDesktop}`).animate({ top: '100%' }, 500 * 2, function () {
+        $(this).css('top', '-100%'); // Reset the top position for the next time it's shown
     });
 
     // Slide in the current desktop from the top
     $(`#desktop-${currentDesktop}`).css('top', '-100%'); // Start from the top
-    $(`#desktop-${currentDesktop}`).show(); // Show it before the animation
-    $(`#desktop-${currentDesktop}`).animate({ top: '0' }, 500, function () {
+    $(`#desktop-${currentDesktop}`).animate({ top: '0' }, 500 * 2, function () {
         isAnimating = false; // Reset the flag when the animation is complete
     });
 }
@@ -61,6 +59,8 @@ const icons = [
     </div>`]
 ];
 
+const colors = ["yellow", "green", "blue", "orange", "purple"]
+
 const backgroundPath = "images/background-";
 const initDesktops = () => {
     for (let i = 0; i < 4; i++) {
@@ -73,17 +73,22 @@ const initDesktops = () => {
             "background-image",
             `url(${backgroundPath}${i}.jpg)`
         );
-        $(`#desktop-${i}`).hide();
+        // $(`#desktop-${i}`).css(
+        //     "background-color",
+        //     colors[i]
+        // );
+        $(`#desktop-${i}`).css('top', '-100%');
         $(`#desktop-${i}`).on("click", cycleDesktops);
+
+        $(`#desktop-${i}`).append(`<div id='icon-container-${i}' class='icon-container'></div>`);
 
         // Make some icons for each desktop
         for (icon of icons[i]) {
-            $(`#desktop-${i}`).append(icon);
+            $(`#icon-container-${i}`).append(icon);
         }
-
     }
 
-    cycleDesktops();
+    $("#desktop-0").css('top', '0');
 };
 
 const script = (event) => {

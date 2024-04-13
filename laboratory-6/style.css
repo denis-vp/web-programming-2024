@@ -12,16 +12,18 @@ body {
 
 .desktop {
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 
+    background-size: cover;
+}
+
+.icon-container {
     padding: 30px;
-
+    
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-
-    background-size: cover;
 }
 
 .icon {
